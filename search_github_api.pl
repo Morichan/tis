@@ -98,6 +98,9 @@ sub select_search_mode {
     if ($option eq "version") {
         my $version = $gas->search_tools_latest_version;
         print $version;
+    } elsif ($option eq "description") {
+        my $description = $gas->search_tools_description;
+        print $description;
     }
 }
 

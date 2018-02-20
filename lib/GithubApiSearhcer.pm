@@ -35,6 +35,12 @@ sub search_tools_latest_version {
     return $self->latest_release_version;
 }
 
+sub search_tools_description {
+    my $self = shift;
+
+    return $self->searching_json_data->{items}[0]{description};
+}
+
 sub add_searching_url_and_name {
     my $self = shift;
     my $name = shift;
