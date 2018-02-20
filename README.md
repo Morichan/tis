@@ -8,3 +8,21 @@ Tool Information Searcher
 
 また、このリポジトリは任意のサーバにおいてください。
 
+
+
+# Feature
+
+APIサーバです。
+
+任意のツール名とオプションを元に、欲しいツールの情報をGitHubから取得します。
+
+
+
+# Commands
+
+```bash:使い方
+$ git clone https://github.com/Morichan/tis.git
+$ cd tis
+$ python start_hug.py
+```
+
