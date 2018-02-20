@@ -7,6 +7,7 @@ Tool Information Searcher
 決して某企業さんと関係があるわけではありません。
 
 また、このリポジトリは任意のサーバにおいてください。
+サーバには[HUG](https://github.com/timothycrosley/hug)を利用しています。
 
 
 
@@ -23,6 +24,6 @@ APIサーバです。
 ```bash:使い方
 $ git clone https://github.com/Morichan/tis.git
 $ cd tis
-$ python start_hug.py
+$ hug -f start_hug.py
 ```
 
