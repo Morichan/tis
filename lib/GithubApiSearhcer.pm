@@ -19,13 +19,18 @@ sub search_github_api_and_name_eq {
     $self->add_searching_url_and_name($name);
     $self->searching_json_data(
         $self->format_json_from_github_apt($self->searching_url));
+}
+
+sub search_tools_latest_version {
+    my $self = shift;
+
     my $full_name = $self->searching_json_data->{items}[0]{full_name};
 
-    $self->release_url($self->release_url . $full_name . "/releases");
+    $self->add_release_url_and_name($full_name);
     $self->release_json_data(
         $self->format_json_from_github_apt($self->release_url));
     $self->latest_release_version(
-        $self->release_json_data->[0]{name});
+        $self->release_json_data->[0]{tag_name});
 
     return $self->latest_release_version;
 }
@@ -35,6 +40,13 @@ sub add_searching_url_and_name {
     my $name = shift;
 
     $self->searching_url($self->searching_url . $name);
+}
+
+sub add_release_url_and_name {
+    my $self = shift;
+    my $name = shift;
+
+    $self->release_url($self->release_url . $name . "/releases");
 }
 
 sub format_json_from_github_apt {
